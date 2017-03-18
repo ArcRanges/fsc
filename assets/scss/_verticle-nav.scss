@@ -1,0 +1,111 @@
+/*
+aside menu
+*/
+/*
+Menu left style  added in v1.3
+*/
+@media (min-width: 768px) {
+    .main-content {
+        padding-left: 220px;
+        position: relative;
+        height: 100%;
+    }
+    .main-content .container {
+        width: 100%;
+        padding: 0px 30px;
+    }
+
+    .verticle-menu {
+        width: 220px;
+        position: fixed;
+        top: 0;
+        height: 100%;
+        z-index: 9999;
+        background: #fff;
+        text-align: center;
+        &.left-verticle{
+            left: 0;
+            box-shadow: 0px 3px 21px rgba(0,0,0,0.1);
+        }
+    }
+    .verticle-menu .container {
+        width: 100%;
+        padding: 0px;
+    }
+    .verticle-menu .navbar-default{
+        margin: 0px;
+    }
+    .verticle-menu .navbar-default .navbar-nav > .active > a, .verticle-menu .navbar-default .navbar-nav > .active > a:focus, .verticle-menu .navbar-default .navbar-nav > .active > a:hover {
+        color: $skin-color;
+        background-color: transparent;
+    }
+    .verticle-menu .navbar-default .navbar-nav > li a, .verticle-menu .navbar-header {
+        display: block;
+        float: none;
+    }
+    .verticle-menu .navbar-default .navbar-brand {
+        float: none;
+        display: block;
+        text-align: center;
+        margin-left:0px;
+        margin-bottom: 10px;
+        margin-top:15px;
+        img{
+            display: block;
+            margin:0 auto;
+            
+        }
+    }
+    .verticle-menu .navbar-nav {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .verticle-menu .dropdown-menu {
+        left: 100%;
+        top: 0;
+        padding: 0px;
+        min-width: 200px;
+    }
+    .verticle-menu .navbar-nav > li > a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .verticle-menu .navbar-nav>li{
+        float: none;
+    }
+    .sidebar-contacts {
+        a{
+            color: #aeaeae;
+            &:hover{
+                color: $skin-color;
+            }
+        }
+        p{
+            i{
+                margin-right: 10px;
+            }
+        }
+        .top-socials{
+            li a{
+                font-size: 20px;
+            }
+        }
+    }
+    body.right-navbar{
+        .verticle-menu{
+            &.right-verticle{
+                right: 0px;
+                 box-shadow: 0px -3px 21px rgba(0,0,0,0.1);
+            }
+        }
+        .verticle-menu .dropdown-menu{
+left:auto;
+right: 100%;
+        }
+        .main-content{
+            padding-left: 0px;
+            padding-right: 220px;
+        }
+    }
+}

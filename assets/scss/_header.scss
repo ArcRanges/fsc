@@ -1,0 +1,204 @@
+/*
+=====================
+HEADER STYLES
+=====================
+*/
+
+/**navbar inverse (dark)**/
+.navbar-inverse {
+    border:0px;
+    margin: 0px;
+    background-color: #1c2222;
+    margin-bottom: 0px;
+    position: relative;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+    &:hover{
+        color: $skin-color;
+        background-color: transparent;
+    }
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: $skin-color;
+    background-color: transparent;
+}
+.sticky-header{
+    z-index: 999!important;
+}
+/**navbar-light**/
+.navbar-default {
+    border:0px;
+    margin: 0px;
+    background-color: #fff;
+    margin-bottom: 0px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #000;  
+    &:hover{
+        color: $skin-color;
+        background-color: transparent;
+    }
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: $skin-color;
+    background-color: transparent;
+}
+.navbar-nav>li>a{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: $title-font;
+}
+.navbar-brand>img {
+    display: block;
+    margin-top: -1px;
+}
+.header-top-transparent .navbar-default .navbar-nav > .active > a, .header-top-transparent .navbar-default .navbar-nav > .active > a:focus, .header-top-transparent .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .open > a, .header-top-transparent .navbar-default .navbar-nav > .open > a:focus,.header-top-transparent .navbar-default .navbar-nav > .open > a:hover {
+    color: $skin-color !important;
+    background-color: transparent;
+}
+.header-top-transparent{
+    .navbar-brand{
+        img{
+            position: absolute;
+            @include transition(all 0.3s);
+            &.logo-scroll{
+                opacity: 0;
+            }
+        }
+    }
+}
+.cart-nav{
+    a{
+        position: relative;
+        display: block;
+        padding: 0;
+        margin-left: 30px;
+        background: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 100px;
+        margin-top: 15px;
+        text-align:center;
+        line-height:32px;
+        font-size:18px;
+
+        .badge{
+            position: absolute;
+            right: -5px;
+            top: 0px;
+            padding: 1px 4px;
+            font-weight: 400;
+            background: $skin-color;
+        }
+    }
+}
+.cart-inner{
+    padding: 30px 20px;
+    h4{
+        color: #fff;
+    }
+    hr{
+        border-top-color: rgba(255,255,255,0.1);
+    }
+}
+.cart-list{
+    li{
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom:1px solid rgba(255,255,255,0.1);
+        &:last-child{
+            border-bottom: 0px;
+        }
+        .btn{
+            margin: 5px;
+        }
+    }
+    .cart-thumb{
+        float: left;
+        margin-right: 10px;
+    }
+    .cart-content{
+        overflow: hidden;
+        h5{
+            color: #ddd;
+        }
+        .close{
+            color: $skin-color;
+        }
+    }
+    p{
+        .price{
+            color: $skin-color;
+            display: inline-block;
+            margin-right: 5px;
+            font-weight: 700;
+        }
+    }
+}
+@media(min-width:768px){
+    .header-center-menu{
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+        }
+
+        .navbar .navbar-collapse {
+            text-align: center;
+        }
+    }
+    .navbar-nav>li>a{
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+    .navbar-brand{
+        height: 64px;
+    }
+  
+}
+  .header-top-transparent{
+        background: transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width:100%;
+        z-index: 9999;
+        .top-bar{
+            background: transparent;
+        }
+        .navbar-default{
+            background: transparent;
+            @include transition(all 0.3s);
+            .navbar-nav>li>a{
+                color: #fff;
+                &:hover{
+                    color: $skin-color;
+                }
+            }
+        }
+        .is-sticky .navbar-default{
+            background: rgba(255,255,255,0.95);
+            @include box-shadow(rgba(0,0,0,0.08) 1px solid);
+            .navbar-nav>li>a{
+                color: #000;
+                &:hover{
+                    color: $skin-color;
+                }
+            }
+            .navbar-brand img.logo-default{
+                opacity: 0;
+            }
+            .navbar-brand img.logo-scroll{
+                opacity: 1;
+            }
+        }
+    }
+.is-sticky .navbar-default{
+    background: rgba(255,255,255,0.98);
+    @include box-shadow(0px 0px 8px rgba(0,0,0,0.08));
+}
+body #sticky-wrapper{
+    height: auto !important;
+}

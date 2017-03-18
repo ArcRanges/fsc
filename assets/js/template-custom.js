@@ -1,0 +1,85 @@
+var $ = $.noConflict();
+$(document).ready(function () {
+    "use strict";
+    $('[data-toggle="tooltip"]').tooltip();
+    //nav hover dropdown
+    $('.js-activated').dropdownHover({
+        instantlyCloseOthers: false,
+        delay: 0
+    }).dropdown();
+// site preloader
+    $(window).load(function () {
+        $('#preloader').fadeOut('slow', function () {
+            $(this).remove();
+        });
+    });
+//sticky header
+    $(window).resize(function () {
+        $(".navbar-collapse").css({maxHeight: $(window).height() - $(".navbar-header").height() + "px"});
+    });
+
+//sticky header on scroll
+    $(window).load(function () {
+        $(".sticky-header").sticky({topSpacing: 0});
+    });
+    //hero text fade flexslider
+    $(window).load(function () {
+        $('.gallery-slider').flexslider({
+            controlNav: false,
+            directionNav: true,
+            slideshowSpeed: 5000
+        });
+    });
+
+//testimonial slider
+    $(window).load(function () {
+        $('.testi-slider').flexslider({
+            smoothHeight: true,
+            controlNav: true,
+            directionNav: false,
+            animation: "slide"
+        });
+    });
+//parallax
+    $(window).stellar({
+        horizontalScrolling: false,
+        responsive: true
+    });
+
+    $(".incr-btn").on("click", function (e) {
+        var $button = $(this);
+        var oldValue = $button.parent().find('.quantity').val();
+        $button.parent().find('.incr-btn[data-action="decrease"]').removeClass('inactive');
+        if ($button.data('action') == "increase") {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            // Don't allow decrementing below 1
+            if (oldValue > 1) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 1;
+                $button.addClass('inactive');
+            }
+        }
+        $button.parent().find('.quantity').val(newVal);
+        e.preventDefault();
+    });
+
+    //back to top
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function () {
+        $('html, body').animate({scrollTop: 0}, 800);
+        return false;
+    });
+
+});
+
